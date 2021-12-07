@@ -1,5 +1,10 @@
 package Hw3;
 
+import Hw3.Values.BlueValue;
+import Hw3.Values.GreenValue;
+import Hw3.Values.RedValue;
+import Hw3.Values.ResetValue;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;

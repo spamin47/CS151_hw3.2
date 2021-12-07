@@ -1,6 +1,8 @@
-package Hw3;
+package Hw3.Values;
 
-public class ResetValue implements Value{
+import Hw3.Value;
+
+public class ResetValue implements Value {
     private int value;
     public ResetValue(int value){
         this.value = value;

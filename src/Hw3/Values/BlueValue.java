@@ -1,8 +1,10 @@
-package Hw3;
+package Hw3.Values;
 
-public class RedValue implements Value{
+import Hw3.Value;
+
+public class BlueValue implements Value {
     private int value;
-    public RedValue(int value){
+    public BlueValue(int value){
         this.value = value;
     }
     public int getValue(){
