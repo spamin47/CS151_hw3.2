@@ -41,7 +41,7 @@ public class View extends JFrame {
 
         //add listeners
         updateBlockButton.addActionListener(updateValue());
-        resetButton.addActionListener(reset());
+        resetButton.addActionListener(resetValue(0));
 
         //add components
             //leftside
@@ -126,7 +126,16 @@ public class View extends JFrame {
 
         };
     }
+    public ActionListener resetValue(int newValue){
+        return event -> {
+            try{
+                queue.put(new ResetValue(newValue));
+            }catch(InterruptedException e){
+                e.printStackTrace();
+            }
 
+        };
+    }
     public void updateRedBar(int newValue){
         System.out.println("redHeight updated to " + newValue);
         redBar.setHeight(newValue);
@@ -139,16 +148,14 @@ public class View extends JFrame {
         System.out.println("blueHeight updated to " + newValue);
         blueBar.setHeight(newValue);
     }
-    //set bar height to 0. Reset values.
-    public ActionListener reset(){
-        return e ->{
+    //set bar height to 0. ResetValue values.
+    public void reset(int value){
             redTextArea.setText("");
             blueTextArea.setText("");
             greenTextArea.setText("");
-            redBar.setHeight(0);
-            greenBar.setHeight(0);
-            blueBar.setHeight(0);
-        };
+            redBar.setHeight(value);
+            greenBar.setHeight(value);
+            blueBar.setHeight(value);
 
     }
 }

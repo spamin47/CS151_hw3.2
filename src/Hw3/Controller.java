@@ -38,6 +38,11 @@ public class Controller {
                 System.out.println("Blue value: " + blue.getValue());
                 view.updateBlueBar(blue.getValue());
             }
+            if(value.getClass() == ResetValue.class){
+                System.out.println("Reset value called");
+                ResetValue reset = (ResetValue) value;
+                view.reset(reset.getValue());
+            }
 
         }
     }
