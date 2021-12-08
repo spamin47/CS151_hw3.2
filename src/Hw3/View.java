@@ -1,13 +1,12 @@
 package Hw3;
 
-import Hw3.Values.BlueValue;
-import Hw3.Values.GreenValue;
-import Hw3.Values.RedValue;
-import Hw3.Values.ResetValue;
+import Hw3.Components.RectangleComponent;
+import Hw3.Values.*;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
 import java.util.concurrent.BlockingQueue;
 
 public class View extends JFrame {
@@ -30,7 +29,7 @@ public class View extends JFrame {
     //bar values
 
 
-    public View(BlockingQueue<Value> queue){
+    public View(BlockingQueue<Value> queue, HashMap<Color,Integer> listOfBars){
         //declarations
         this.updateBlockButton = new JButton("update");
         this.resetButton = new JButton("reset");
@@ -45,8 +44,8 @@ public class View extends JFrame {
         this.queue = queue;
 
         //add listeners
-        updateBlockButton.addActionListener(updateValue());
-        resetButton.addActionListener(resetValue(0));
+        updateBlockButton.addActionListener(updateValue()); //listen for updatebutton
+        resetButton.addActionListener(resetValue(0)); //listen for resetbutton
 
         //add components
             //leftside
@@ -131,6 +130,7 @@ public class View extends JFrame {
 
         };
     }
+    //Action listener for resetting values
     public ActionListener resetValue(int newValue){
         return event -> {
             try{

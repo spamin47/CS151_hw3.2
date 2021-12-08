@@ -1,4 +1,4 @@
-package Hw3;
+package Hw3.Components;
 
 import java.awt.*;
 import java.awt.geom.Rectangle2D;

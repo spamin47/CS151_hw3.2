@@ -1,8 +1,7 @@
-package Hw3;
+package Hw3.Components;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.geom.Rectangle2D;
 
 public class RectangleComponent extends JComponent {
 
